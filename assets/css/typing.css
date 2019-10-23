@@ -1,0 +1,12 @@
+#container{
+  border: solid black 1px;
+  width: 360px;
+  margin: 0px auto;
+}
+
+h1{
+  background: gray;
+  margin: 0px 0px 13px auto;
+  text-align: center;
+  font-weight: normal;
+}
