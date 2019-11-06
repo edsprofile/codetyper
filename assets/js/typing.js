@@ -1,4 +1,5 @@
-var words = "for(int i = 0; i < 10; i++)";
+var words = "for(int i = 0; i < 10; i++){\n    //code\n}";
+var displayWords = "for(int i = 0; i < 10; i++){<br />&nbsp&nbsp&nbsp&nbsp//code<br />}"
 var win = "for(int i = 0; i < 10; i++)";
 var wordArrayEasy = ["char my_char = '';",
                      "float my_float = 0.0;",
@@ -12,28 +13,22 @@ var wordArrayEasy = ["char my_char = '';",
                      "while(i < 10)",
                      ""];
 
-$("#display").html(words);
+$("#display").html(displayWords);
 
 $("textarea").keypress(function(event)
     {
-	var TABKEY = 9;
 	var ENTERKEY = 13;
 	console.log($(this).val());
-
-	if(event.keyCode === TABKEY && event.preventDefault)
-	{
-	    console.log("hello");
-	    event.preventDefault();
-	    this.value += "    ";
-	}
+	console.log(words);
 	
 	if($(this).val() === words && event.keyCode === ENTERKEY)
 	{
 	    $("#display").html("Win");
+	    $("#info").empty();
 	}
 	else if($(this).val() !== words && event.keyCode === ENTERKEY)
 	{
-	    $("#display").html("Loss");
+	    $("#info").html("incorrect");
 	}
     });
 
@@ -52,11 +47,10 @@ $("textarea").keydown(function(event)
 $("#reset").on("click", function()
     {
 	$("#display").html(words);
-    })
+    });
 
 
 function pickWords()
 {
     var randomValue = Math.floor(Math.random() * wordArrayEasy);
-    
 }
