@@ -1,5 +1,8 @@
-var words = "for(int i = 0; i < 10; i++){\n    //code\n}";
-var displayWords = "for(int i = 0; i < 10; i++){<br />&nbsp&nbsp&nbsp&nbsp//code<br />}"
+//var words = "for(int i = 0; i < 10; i++){\n    //code\n}";
+var words = "int i = 0;";
+//var displayWords = "for(int i = 0; i < 10; i++){<br />&nbsp&nbsp&nbsp&nbsp//code<br />}";
+var displayWords = "int i = 0;";
+
 var win = "for(int i = 0; i < 10; i++)";
 var wordArrayEasy = ["char my_char = '';",
                      "float my_float = 0.0;",

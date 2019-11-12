@@ -31,11 +31,10 @@ input
     margin: 10px;
 }
 
-
-
 body
 {
     font-family: 'lato', sans-serif;
+    margin: 8px;
 }
 
 .topnav
