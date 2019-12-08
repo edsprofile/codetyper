@@ -1,0 +1,12 @@
+
+Function created.
+
+No errors.
+
+PL/SQL procedure successfully completed.
+
+
+TEST_LIST                                                                       
+--------------------------------------------------------------------------------
+Score: 0Name: blah, Score: 0Name: blah1,                                        
+

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+</head>
+<body>
+
+<link href ="loginpage.css" rel ="stylesheet">
+
+<div class="topnav">
+  <a href="">Game</a>
+  <a href="">LeaderBoard</a>
+  <a href="">Forum</a>
+  <!--<a class="active" href="http://nrs-projects.humboldt.edu/~cs359/loginpage.html">Login</a>
+   -->
+</div>
+
+<h2>Leaderboard</h2>
+
+<?php
+
+$username = "java"; 
+$password = "java";
+
+$db_conn_str =
+            "(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)
+                                       (HOST = cedar.humboldt.edu)
+                                       (PORT = 1521))
+                            (CONNECT_DATA = (SID = STUDENT)))";
+
+        $conn = oci_connect($username, $password, $db_conn_str);
+
+$query_str = 'select user_name, score
+			  from cs359user, cs359score
+			  where cs359score.user_name = cs359user.user_name';
+
+$query = oci_parse($conn, $query_str);
+oci_execute($query, OCI_DEFAULT);
+while(oci_fetch($query))
+{
+	$curr_username = oci_result($query, "USER_NAME");
+	$curr_score = oci_result($query, "SCORE");
+?>
+<h2> Infomation from architecture table </h2>
+<table>
+	<tr>
+		<th>Username: </th>
+		<th>Score: </th>
+	</tr>
+	<tr>
+		<th><?= $curr_username ?></th>
+		<th><?= $curr_score?></th>
+	</tr>
+</table>
+	<?php
+}
+
+
+}
+oci_close($conn);
+
+?>
+  
+
+</body>
+</html>

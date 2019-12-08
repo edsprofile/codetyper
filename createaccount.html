@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<HTML>
+<head>
+
+<title> Create Account </title>
+<link href ="createaccount.css" rel ="stylesheet">
+
+<div class="topnav">
+  <a href="">Home</a>
+  <a href="">LeaderBoard</a>
+  <a href="">Forum</a>
+  <a href="http://nrs-projects.humboldt.edu/~cs359/loginpage.html">Login</a>
+</div>
+<script type="text/javascript" language="javascript">
+function redirect()
+{
+    window.location.href="http://nrs-projects.humboldt.edu/~cs359/loginpage.html";
+}
+</script>
+
+
+
+</head>
+
+<body background="">
+
+<div class="toptitle">
+<h1> Create Account </h1>  
+</div>
+
+
+<form id = "input1" action = "createaccount.php" method = "post" name = "input1">
+ 
+<strong>First name:</strong>  
+<br> <input id = "textbox" type="text" placeholder="Enter First Name" name="firstname" required> <br>
+<strong>Last name:  </strong>
+<br> <input id = "textbox" type="text" placeholder="Enter Last Name" name="lastname" required> <br> 
+<strong>Email: </strong>
+<br> <input id = "textbox" type="email" placeholder="Enter Email" name="personalemail" required> <br>
+<strong>User name:</strong>  
+<br> <input id = "textbox" type="text" placeholder="Enter Username" name="theusername" required> <br>
+<strong>Password:</strong>  
+<br> <input id = "textbox" type="password" placeholder="Enter Password" name="thepassword" required> <br>
+
+</br>
+
+<input id = "button" type="submit" onclick="redirect();" value="Create Account"> 
+<input id = "button1" type="reset" value="Reset" >
+</form>
+
+</body>
+</html>
+ 
+
+
+
